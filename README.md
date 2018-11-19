@@ -23,3 +23,8 @@ docker run --name hello -d  -e soa_zookeeper_host=172.16.17.222:2181 -e soa_cont
 ```
 
 Then the demo service is up. You can use the [service document site](https://github.com/dapeng-soa/dapeng-api-doc) to feel the service and do some testing. 
+
+```
+docker run --name dapengApiDoc -d -e soa_zookeeper_host=192.168.10.131:2181 -p 8083:8080 dapengsoa/dapeng-api-doc
+```
+Then open http://localhost:8083 with your brower.
