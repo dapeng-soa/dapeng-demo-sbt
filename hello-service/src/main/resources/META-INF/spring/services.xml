@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:soa="http://soa-springtag.dapeng.com/schema/service"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://soa-springtag.dapeng.com/schema/service
+        http://soa-springtag.dapeng.com/schema/service/service.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--参数配置-->
+    <context:property-placeholder location="classpath:config_hello.properties" local-override="false" system-properties-mode="ENVIRONMENT"/>
+
+    <context:component-scan base-package="com.github.dapeng"/>
+
+    <bean id="helloScalaService" class="com.HelloServiceImpl"/>
+    <soa:service ref="helloScalaService"/>
+
+    <bean id="demoTestService" class="com.today.service.demoService.DemoServiceImpl"/>
+    <soa:service ref="demoTestService"/>
+
+   <!-- <bean id="helloServiceA" class="com.today.service.serviceA.HelloServiceA1Impl"/>
+    <soa:service ref="helloServiceA"/>
+
+
+    <bean id="helloServiceB" class="com.today.service.serviceB.HelloServiceB1Impl"/>
+    <soa:service ref="helloServiceB"/>-->
+
+</beans>
